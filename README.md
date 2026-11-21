@@ -46,7 +46,9 @@ AP, The Daily Short.
 - `main.py` — the entry point (Python 3.13, standard library only). It
   copies `entry.png` to `$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output`)
   and validates the file first (PNG or JPEG, at most 1 MiB, at most
-  1024×1024, copied bytes hash-checked).
+  1024×1024, copied bytes hash-checked). It parses PNG dimensions from
+  the IHDR chunk and JPEG dimensions from the Start-Of-Frame marker, so
+  either format is accepted.
 
 ```sh
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py

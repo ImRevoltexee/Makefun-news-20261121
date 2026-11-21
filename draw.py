@@ -206,6 +206,8 @@ def main():
             cy += 24
 
     # ---- ALSO TODAY strip ----
+    # Three short items side by side; each column is (W - margins) / 3 wide
+    # and wraps to at most 4 lines so the strip stays a fixed height.
     sy = my + 3 * ch + 2 * gap + 14
     d.rounded_rectangle([mx, sy, W - mx, sy + 118], radius=10, fill=STRIP)
     d.text((mx + 16, sy + 12), "ALSO TODAY", font=F_STRIP_HEAD, fill=GOLD)
